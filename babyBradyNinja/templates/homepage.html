@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+
     <title>Baby Brady Ninja</title>
 </head>
 <body>
-    Baby Brady Ninja
+    <div class="top-half">
+        <div class="boy"><a href="#">Is it a boy?</a></div>
+    </div>
+    <div class="separator"></div>
+    <a href="#" class="greeting">
+        <div class="greeting-box center-page">
+            <div class="greeting-circle center-page">
+                <div class="heading">Baby Stephenson</div>
+                <div>Coming July 2017</div>
+            </div>
+        </div>
+    </a>
+    <div class="bottom-half">
+        <div class="girl"><a href="#">Is it a girl?</a></div>
+    </div>
 </body>
 </html>

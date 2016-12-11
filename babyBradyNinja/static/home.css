@@ -1,0 +1,121 @@
+html, p, body, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: dimgray;
+}
+
+.top-half {
+    background-color: skyblue;
+}
+
+.top-half, .bottom-half {
+    height: 49vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-half {
+    background-color: lightpink;
+}
+
+.boy, .girl {
+    font-size: 2em;
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out 0.25s;
+    -moz-transition: opacity 1s ease-in-out 0.25s;
+    -ms-transition: opacity 1s ease-in-out 0.25s;
+    -o-transition: opacity 1s ease-in-out 0.25s;
+    transition: opacity 1s ease-in-out 0.25s;
+}
+
+.boy a, .girl a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.boy {
+    padding-bottom: 18vh;
+}
+
+.top-half:hover .boy, .bottom-half:hover .girl {
+    opacity: 1;
+}
+
+.girl {
+    padding-top: 18vh;
+}
+
+.girl:hover {
+    opacity: 1;
+}
+
+.separator {
+    height: 2vh;
+    width: 100vw;
+    background-color: dimgrey;
+}
+
+.center-page {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+
+.greeting {
+    background-color: dimgray;
+    text-decoration: none;
+    color: whitesmoke;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.greeting:hover {
+    background-color: #545454;
+    box-shadow: 0 0 #000;
+}
+
+.greeting-box {
+    height: auto;
+    width: auto;
+    background-color: inherit;
+    max-height: 10vh;
+    max-width: 26vw;
+    min-height: 60px;
+    min-width: 280px;
+}
+
+.greeting-circle {
+    height: auto;
+    width: auto;
+    max-height: 20vh;
+    max-width: 25vw;
+    min-height: 150px;
+    min-width: 250px;
+    border-radius: 50%;
+    color: whitesmoke;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.greeting:hover {
+    box-shadow: black;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2em;
+}
