@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 html, p, body, h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 
 body {
@@ -43,10 +48,6 @@ body {
 
 .boy, .girl {
     font-size: 2em;
-}
-
-.boy a, .girl a {
-    text-decoration: none;
     color: #f5f5f5;
 }
 
@@ -67,47 +68,55 @@ body {
 }
 
 .center-page {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
     position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
 }
 
-.greeting {
+.greeting-section {
+    color: whitesmoke;
     background-color: dimgray;
-    text-decoration: none;
-    color: whitesmoke;
+    z-index: 1;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
 }
 
-.greeting-box {
-    height: auto;
-    width: auto;
-    background-color: inherit;
-    max-height: 10vh;
-    max-width: 26vw;
-    min-height: 60px;
-    min-width: 280px;
+.greeting:before {
+    content: "";
+    top: 50vh;
+    left: -75vw;
+    width: 150vw;
+    height: 1000px;
+    z-index: -1;
 }
 
-.greeting-circle {
-    height: auto;
-    width: auto;
-    max-height: 20vh;
-    max-width: 25vw;
-    min-height: 150px;
-    min-width: 250px;
+.greeting-title {
+    position: relative;
+    z-index: 200;
+    padding: 15px;
+    width: 280px;
+    text-align: center;
+}
+
+.greeting-title, .greeting-title:before {
+    background-color: dimgray;
+}
+
+.greeting-title:before {
+    content: "";
     border-radius: 50%;
-    color: whitesmoke;
-    background-color: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .heading {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
