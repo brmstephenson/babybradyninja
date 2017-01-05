@@ -52,12 +52,12 @@ body {
 }
 
 .boy {
-    padding-bottom: 18vh;
+    padding-bottom: 75px;
     animation: fade-in-out 3s infinite;
 }
 
 .girl {
-    padding-top: 18vh;
+    padding-top: 75px;
     animation: fade-out-in 3s infinite;
 }
 
@@ -81,6 +81,7 @@ body {
     margin-right: auto;
     margin-left: auto;
     max-width: 1000px;
+    text-decoration: none;
 }
 
 .greeting:before {
@@ -101,7 +102,7 @@ body {
 }
 
 .greeting-title, .greeting-title:before {
-    background-color: dimgray;
+    background-color: #696969;
 }
 
 .greeting-title:before {

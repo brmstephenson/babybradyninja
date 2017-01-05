@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'details.css' %}" />
+
+<div class="gender-title"><h1>Cast Your Vote!</h1></div>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form class="vote-form" action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
+    <div class="gender-container">
+        {% for choice in question.choice_set.all %}
+            <div class="{{ choice.choice_text }}-container">
+                <input class="{{ choice.choice_text }}-input" type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+                <label class="{{ choice.choice_text }}-label" for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+            </div>
+        {% endfor %}
+    </div>
+    <input class="vote-button" type="submit" value="Vote">
+</form>
