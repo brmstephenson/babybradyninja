@@ -9,10 +9,19 @@
     <div class="gender-container">
         {% for choice in question.choice_set.all %}
             <div class="{{ choice.choice_text }}-container">
+                <div class="{{ choice.choice_text }}-helper">Is it a {{ choice.choice_text | capfirst }}?</div>
                 <input class="{{ choice.choice_text }}-input" type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-                <label class="{{ choice.choice_text }}-label" for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+                <label class="{{ choice.choice_text }}-label" for="choice{{ forloop.counter }}">
+{#                    <div class="svg-container">#}
+{#                    {% if choice.choice_text == "boy" %}#}
+{#                        <img src="{% static 'boy.svg' %}" class="boy-svg">#}
+{#                    {% elif choice.choice_text == "girl" %}#}
+{#                        <img src="{% static 'girl.svg' %}" class="girl-svg">#}
+{#                    {% endif %}#}
+{#                    </div>#}
+                </label>
             </div>
         {% endfor %}
     </div>
-    <input class="vote-button" type="submit" value="Vote">
+    <input class="vote-button" type="submit" value="Submit Vote">
 </form>
