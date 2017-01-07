@@ -121,3 +121,19 @@ body {
     text-align: center;
     font-size: 1.5em;
 }
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.click-me {
+    font-size: 1.5em;
+    position: absolute;
+    left: 28%;
+    padding-top: 8px;
+    animation: fade-in 10s;
+}
