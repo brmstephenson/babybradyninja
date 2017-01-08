@@ -23,8 +23,12 @@ def results(request, question_id):
             girl_votes = choice.number_of_votes
 
         total_votes += choice.number_of_votes
-    boy_percent = int(boy_votes / total_votes * 100)
-    girl_percent = int(girl_votes / total_votes * 100)
+    if total_votes != 0:
+        boy_percent = int(boy_votes / total_votes * 100)
+        girl_percent = int(girl_votes / total_votes * 100)
+    else:
+        boy_percent = 0
+        girl_percent = 0
 
     return render(request, 'polls/results.html', {
         'question': question,

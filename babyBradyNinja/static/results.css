@@ -28,6 +28,7 @@ body {
     height: 90%;
     width: 50%;
     z-index: 50;
+    display: flex;
 }
 
 .boy-graph-container {
@@ -38,18 +39,20 @@ body {
     background-color: lightpink;
 }
 
-.boy-graph, .girl-graph {
-    position: absolute;
-    bottom: 0;
-    width:50%;
-    z-index: 100;
-}
-
 .votes {
     padding-top: 5px;
     padding-right: 5px;
     float: right;
     color: whitesmoke;
+}
+
+.boy-graph, .girl-graph {
+    /*position: absolute;*/
+    bottom: 0;
+    /*width:50%;*/
+    width: 100%;
+    z-index: 100;
+    align-self: flex-end;
 }
 
 .boy-graph {
@@ -59,4 +62,19 @@ body {
 .girl-graph {
     left: 50%;
     background-color: #E6A4AE;
+}
+
+.boy-zero-votes, .girl-zero-votes {
+    position: absolute;
+    color: whitesmoke;
+    z-index: 150;
+    bottom: 0;
+    width: 50%;
+    text-align: right;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.girl-zero-votes {
+    left: 50%;
 }

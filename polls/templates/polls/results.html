@@ -2,13 +2,22 @@
 <link rel="stylesheet" type="text/css" href="{% static 'results.css' %}" />
 <div class="title"><h1>Total Votes</h1></div>
 <div class="graphs-container">
-    <div class="boy-graph-container"></div>
-    <div class="girl-graph-container"></div>
+    <div class="boy-graph-container">
+        <div class="boy-graph" style="height: {{ boy_percent}}%">
+            <div class="votes">{{ boy_votes }} Votes {{ boy_percent }}%</div>
+        </div>
+    </div>
+    <div class="girl-graph-container">
+        <div class="girl-graph" style="height: {{ girl_percent }}%">
+            <div class="votes">{{ girl_votes }} Votes {{ girl_percent }}%</div>
+        </div>
+    </div>
 </div>
-<div class="boy-graph" style="height: {{ boy_percent }}%">
-    <div class="votes">{{ boy_votes }} Votes {{ boy_percent }}%</div>
-</div>
-<div class="girl-graph" style="height: {{ girl_percent }}%">
-    <div class="votes">{{ girl_votes }} Votes {{ girl_percent }}%</div>
-</div>
-{#<a href="{% url 'polls:detail' question.id %}">Vote again?</a>#}
+
+{% if boy_percent == 0 %}
+    <div class="boy-zero-votes">0 Votes 0%</div>
+{% endif %}
+
+{% if girl_percent == 0 %}
+    <div class="girl-zero-votes">0 Votes 0%</div>
+{% endif %}
