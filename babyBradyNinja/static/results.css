@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+html, p, body, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: dimgray;
+}
+
+.title {
+    height: 10%;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graphs-container {
+    display: flex;
+}
+
+.boy-graph-container, .girl-graph-container {
+    height: 90%;
+    width: 50%;
+    z-index: 50;
+}
+
+.boy-graph-container {
+    background-color: skyblue;
+}
+
+.girl-graph-container {
+    background-color: lightpink;
+}
+
+.boy-graph, .girl-graph {
+    position: absolute;
+    bottom: 0;
+    width:50%;
+    z-index: 100;
+}
+
+.votes {
+    padding-top: 5px;
+    padding-right: 5px;
+    float: right;
+    color: whitesmoke;
+}
+
+.boy-graph {
+    background-color: #5b80b2;
+}
+
+.girl-graph {
+    left: 50%;
+    background-color: #E6A4AE;
+}

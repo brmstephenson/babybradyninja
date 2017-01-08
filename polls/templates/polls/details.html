@@ -3,7 +3,6 @@
 
 <div class="gender-title"><h1>Cast Your Vote!</h1></div>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <form class="vote-form" action="{% url 'polls:vote' question.id %}" method="post">
     {% csrf_token %}
     <div class="gender-container">
@@ -11,17 +10,12 @@
             <div class="{{ choice.choice_text }}-container">
                 <div class="{{ choice.choice_text }}-helper">Is it a {{ choice.choice_text | capfirst }}?</div>
                 <input class="{{ choice.choice_text }}-input" type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-                <label class="{{ choice.choice_text }}-label" for="choice{{ forloop.counter }}">
-{#                    <div class="svg-container">#}
-{#                    {% if choice.choice_text == "boy" %}#}
-{#                        <img src="{% static 'boy.svg' %}" class="boy-svg">#}
-{#                    {% elif choice.choice_text == "girl" %}#}
-{#                        <img src="{% static 'girl.svg' %}" class="girl-svg">#}
-{#                    {% endif %}#}
-{#                    </div>#}
-                </label>
+                <label class="{{ choice.choice_text }}-label" for="choice{{ forloop.counter }}"></label>
             </div>
         {% endfor %}
     </div>
+    {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+    {% endif %}
     <input class="vote-button" type="submit" value="Submit Vote">
 </form>

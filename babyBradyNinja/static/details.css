@@ -108,6 +108,20 @@ body {
     /*background-color: yellow;*/
 }
 
+.error-message {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    width: 200px;
+    padding-top: 11px;
+    height: 40px;
+    text-align: center;
+    margin-left: -100px;
+
+    color: whitesmoke;
+    background: rgb(213, 121, 108);
+}
+
 .vote-button {
     position: absolute;
     height: 10%;

@@ -12,7 +12,27 @@ def details(request, question_id):
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/results.html', {'question': question})
+    choices = question.choice_set.all()
+    total_votes = 0
+    boy_votes = 0
+    girl_votes = 0
+    for choice in choices:
+        if choice.choice_text == 'boy':
+            boy_votes = choice.number_of_votes
+        elif choice.choice_text == 'girl':
+            girl_votes = choice.number_of_votes
+
+        total_votes += choice.number_of_votes
+    boy_percent = int(boy_votes / total_votes * 100) - 10
+    girl_percent = int(girl_votes / total_votes * 100) - 10
+
+    return render(request, 'polls/results.html', {
+        'question': question,
+        'boy_votes': boy_votes,
+        'girl_votes': girl_votes,
+        'boy_percent': boy_percent,
+        'girl_percent': girl_percent
+    })
 
 
 def vote(request, question_id):
@@ -22,7 +42,7 @@ def vote(request, question_id):
     except(KeyError, Choice.DoesNotExist):
         return render(request, 'polls/details.html', {
             'question': question,
-            'error_message': "You didn't select a choice.",
+            'error_message': "You didn't select a choice!",
         })
     else:
         selected_choice.number_of_votes += 1

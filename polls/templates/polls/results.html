@@ -1,9 +1,14 @@
-<h1>{{ question.question_text }}</h1>
-
-<ul>
-    {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote {{ choice.number_of_votes }}</li>
-    {% endfor %}
-</ul>
-
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'results.css' %}" />
+<div class="title"><h1>Total Votes</h1></div>
+<div class="graphs-container">
+    <div class="boy-graph-container"></div>
+    <div class="girl-graph-container"></div>
+</div>
+<div class="boy-graph" style="height: {{ boy_percent }}%">
+    <div class="votes">{{ boy_votes }} Votes {{ boy_percent }}%</div>
+</div>
+<div class="girl-graph" style="height: {{ girl_percent }}%">
+    <div class="votes">{{ girl_votes }} Votes {{ girl_percent }}%</div>
+</div>
 {#<a href="{% url 'polls:detail' question.id %}">Vote again?</a>#}
