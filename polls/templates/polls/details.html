@@ -8,7 +8,7 @@
     <div class="gender-container">
         {% for choice in question.choice_set.all %}
             <div class="{{ choice.choice_text }}-container">
-                <div class="{{ choice.choice_text }}-helper">Is it a {{ choice.choice_text | capfirst }}?</div>
+                <div class="{{ choice.choice_text }}-helper">Select {{ choice.choice_text | capfirst }}!</div>
                 <input class="{{ choice.choice_text }}-input" type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
                 <label class="{{ choice.choice_text }}-label" for="choice{{ forloop.counter }}"></label>
             </div>

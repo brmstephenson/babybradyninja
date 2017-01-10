@@ -53,12 +53,12 @@ body {
 
 .boy {
     padding-bottom: 75px;
-    animation: fade-in-out 3s infinite;
+    animation: fade-in-out 4s infinite;
 }
 
 .girl {
     padding-top: 75px;
-    animation: fade-out-in 3s infinite;
+    animation: fade-out-in 4s infinite;
 }
 
 .separator {
